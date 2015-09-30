@@ -48,6 +48,11 @@
             .ident4 {
               color: #3BB15D !important;
             }
+            img.watermark {
+               position: absolute;
+               bottom: 25px;
+               left: 25px;
+            }
           </style>
     <!-- Printing and PDF exports -->
     <script>
@@ -60,18 +65,18 @@
 
     <style>
       .reveal section img.nostyle {
-          background: none;
-          border: none;
-          box-shadow: none;
-          margin: 0;
+        background: none;
+        border: none;
+        box-shadow: none;
+        margin: 0;
       }
       .reveal section img.roundup {
-          border: 2px solid #fff;
-          height: 40px;
-    	    width: 40px;
-    	    border-radius: 23px;
-    	    display: block;
-    	    margin: -15px auto 0;
+        border: 2px solid #fff;
+        height: 40px;
+        width: 40px;
+        border-radius: 23px;
+        display: block;
+        margin: -15px auto 0;
       }
     </style>
 
@@ -83,6 +88,7 @@
   <body>
 
     <div class="reveal">
+      <img class="watermark" src="images/earthling_logo.png" alt="earthling"/>
 
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
@@ -104,9 +110,9 @@
         <section>
           <h2>When you don't know your tool what do you have? </h2>
           <ul>
-            <li class="fragment fade-in">Panels and Problems</li>
+            <li class="fragment fade-in">Panels and Problems<br/><br/></li>
             <li class="fragment fade-in">Insights and Answers</li>
-      	  </ul>
+          </ul>
         </section>
 
         <section data-transition="zoom">
@@ -133,6 +139,7 @@
             <li>CSS</li>
             <li class="fragment fade-in no-list-style"><span class="ident1">Tips:</span>
               <ul>
+                <li>Expand all children: <i>alt + click</i></li>
                 <li>Find by selector: <i>cmd + f</i></li>
                 <li>Computed Style: Identify the winning line</li>
                 <li>Apply pseudo selector to element</li>
@@ -168,6 +175,7 @@
               <ul>
                 <li>Throttling to simulate slower networks</li>
                 <li>Capture frames of the site during download.</li>
+                <li>Copy image as base 64 Data URI</li>
               </ul>
             </li>
           </ul>
@@ -194,12 +202,12 @@
           <h3 class="ident3">Sources</h3>
           <ul>
             <li>Breakpoints are your best friend</li>
-            <li></li>
+            <li>Stepping your code</li>
             <li class="fragment fade-in no-list-style"><span class="ident3">Tips:</span>
               <ul>
                 <li>Prettyify jQuery minified source</li>
-                <li>Capture frames of the site during download.</li>
-                <li></li>
+                <li>Pause on Exceptions</li>
+                <li>Find source by name: <i>cmd + o</i></li>
               </ul>
             </li>
           </ul>
@@ -225,15 +233,8 @@
         <section>
           <h3 class="ident4">Timeline</h3>
           <ul>
-            <li>Identify resources downloaded</li>
             <li>Get a general timeline and speed of the application</li>
-            <li class="fragment fade-in no-list-style"><span class="ident4">Tips:</span>
-              <ul>
-                <li>Throttling to simulate slower networks</li>
-                <li>Capture frames of the site during download.</li>
-                <li></li>
-              </ul>
-            </li>
+            <li>Flame chart</li>
           </ul>
         </section>
 
@@ -257,15 +258,10 @@
         <section>
           <h3 class="ident1">Profiles</h3>
           <ul>
-            <li>Identify resources downloaded</li>
-            <li>Get a general timeline and speed of the application</li>
-            <li class="fragment fade-in no-list-style"><span class="ident1">Tips:</span>
-              <ul>
-                <li>Throttling to simulate slower networks</li>
-                <li>Capture frames of the site during download.</li>
-                <li></li>
-              </ul>
-            </li>
+            <li>Record interactions and gain insight</li>
+            <li>Profile CPU</li>
+            <li>Identify Memory Allocation</li>
+            <li>Monitory memory allocation over time</li>
           </ul>
         </section>
 
@@ -289,13 +285,11 @@
         <section>
           <h3 class="ident2">Resources</h3>
           <ul>
-            <li>Identify resources downloaded</li>
-            <li>Get a general timeline and speed of the application</li>
+            <li>Identify specific resources outside of network tab</li>
+            <li>View persistent storage mechanisms: ie cookies, local storage</li>
             <li class="fragment fade-in no-list-style"><span class="ident2">Tips:</span>
               <ul>
-                <li>Throttling to simulate slower networks</li>
-                <li>Capture frames of the site during download.</li>
-                <li></li>
+                <li>Clear cookies</li>
               </ul>
             </li>
           </ul>
@@ -321,15 +315,8 @@
         <section>
           <h3 class="ident3">Audits</h3>
           <ul>
-            <li>Identify resources downloaded</li>
-            <li>Get a general timeline and speed of the application</li>
-            <li class="fragment fade-in no-list-style"><span class="ident3">Tips:</span>
-              <ul>
-                <li>Throttling to simulate slower networks</li>
-                <li>Capture frames of the site during download.</li>
-                <li></li>
-              </ul>
-            </li>
+            <li>Performance Audit of best practices</li>
+            <li>Very specific recommendations</li>
           </ul>
         </section>
 
@@ -353,25 +340,30 @@
         <section>
           <h3 class="ident4">Console</h3>
           <ul>
-            <li>Identify resources downloaded</li>
-            <li>Get a general timeline and speed of the application</li>
+            <li>Use it like a repl</li>
+            <li><a href="https://developer.chrome.com/devtools/docs/console-api">https://developer.chrome.com/devtools/docs/console-api</a></li>
             <li class="fragment fade-in no-list-style"><span class="ident4">Tips:</span>
               <ul>
-                <li>Throttling to simulate slower networks</li>
-                <li>Capture frames of the site during download.</li>
-                <li></li>
+                <li>console.assert(false,"Something is broken");</li>
+                <li>console.log("%cWhy hello there.", "color: blue;");</li>
+                <li>debugger;</li>
               </ul>
             </li>
           </ul>
         </section>
 
         <section>
-          Act like a device
-        </section>
-
-        <section>
-          <h2>Know your tools.</h2>
-          <img src="images/greenfield.jpg" />
+          <h3 class="ident1">Other nice things...</h3>
+          <ul>
+            <li>React DevTools</li>
+            <li>Device Mode</li>
+            <li class="fragment fade-in no-list-style"><span class="ident1">Tips:</span>
+              <ul>
+                <li>CSS Breakpoints</li>
+                <li>Emulation</li>
+              </ul>
+            </li>
+          </ul>
         </section>
 
         <section>
